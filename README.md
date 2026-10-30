@@ -31,20 +31,20 @@ The application follows a two-tier Flask architecture.
    - MongoDB Atlas is used for persistent data storage.
 
    User
-  |
-  v
-Frontend (Flask - 8000)
-  |
-  | POST /submit
-  v
-Backend (Flask - 9000)
-  |
-  +------> MongoDB Atlas
-  |
-  +------> data.json
-               |
-               v
-           GET /api
+   |
+   v
+   Frontend (Flask - 8000)
+   |
+   | POST /submit
+   v
+   Backend (Flask - 9000)
+   |
+   +------> MongoDB Atlas
+   |
+   +------> data.json
+   |
+   v
+   GET /api
 
 ## Technologies Used
 
@@ -72,10 +72,9 @@ Basic knowledge of Python, Flask, HTML, and MongoDB is recommended.
 
 ## Project Setup
 
-
 1. Clone the repository:
 
-   git clone 
+   git clone https://github.com/Swatii18/flask-signup-application.git
 
 2. Navigate to the project directory:
 
@@ -102,8 +101,6 @@ Basic knowledge of Python, Flask, HTML, and MongoDB is recommended.
 
    cd ../frontend
    pip install -r requirements.txt
-
-## Environment Variables
 
 ## Environment Variables
 
@@ -206,4 +203,3 @@ The screenshots folder contains application screenshots demonstrating:
 - Error handling
 - API response displaying stored records
 - MongoDB records
-
