@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+  </head>
+  <body>
+    <p
+      style="
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        padding-top: 10px;
+        font-weight: bold;
+      "
+    >
+      Hi, welcome to the Sign up page!
+    </p>
+    <p
+      style="
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        padding-top: 10px;
+        font-weight: bold;
+      "
+    >
+      today is {{day_of_week}}
+    </p>
+    <p
+      style="
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        padding-top: 10px;
+        font-weight: bold;
+      "
+    >
+      Current time: {{current_time}}
+    </p>
+    <form action="/submit" method="POST">
+      <label for="username">username:</label>
+      <input type="text" id="username" name="username" required /><br /><br />
+
+      <!-- <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br /><br /> -->
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <br /><br />
+
+      <button type="submit" method="POST">Submit</button>
+    </form>
+    </p>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% for
+    category, message in messages %}
+    <p class="flash-message {{ category }}">{{ message }}</p>
+    {% endfor %} {% endwith %}
+    <button onclick="window.location.href = '/get_data'">View Data</button>
+    <style>
+      
+      body {
+        font-family: Calibri, sans-serif;
+        background-color: yellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #333333;
+      }
+      .flash-message {
+    position: absolute;
+    top: 580px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+      .flash-message.error {
+        color: #b91c1c;
+        background-color: #fee2e2;
+      }
+
+      .flash-message.success {
+        color: #166534;
+        background-color: #dcfce7;
+      }
+    </style>
+  </body>
+</html>
